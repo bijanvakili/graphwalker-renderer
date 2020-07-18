@@ -1,0 +1,13 @@
+{
+  "name": "graphwalker-renderer",
+  "version": "00.00.01",
+  "description": "Rendering package for subgraphs in graphwalker",
+  "main": "index.js",
+  "repository": "https://github.com/bijanvakili/graphwalker-renderer",
+  "author": "Bijan Vakili <bijanvakili@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "typescript": "3.5.3"
+  }
+}
