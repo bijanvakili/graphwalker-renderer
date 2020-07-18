@@ -2,12 +2,43 @@
   "name": "graphwalker-renderer",
   "version": "00.00.01",
   "description": "Rendering package for subgraphs in graphwalker",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "repository": "https://github.com/bijanvakili/graphwalker-renderer",
   "author": "Bijan Vakili <bijanvakili@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=6.10"
+  },
   "devDependencies": {
-    "typescript": "3.5.3"
+    "@types/classnames": "^2.2.9",
+    "@types/d3-selection": "^1.4.1",
+    "@types/node": "^12.6.9",
+    "markdownlint": "0.16.0",
+    "markdownlint-cli": "0.17.0",
+    "prettier": "^2.0.4",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "d3-selection": "^1.4.0"
+  },
+  "scripts": {
+    "build": "tsc --project .",
+    "build:watch": "tsc --project . --watch",
+    "clean:all": "rm -rf ./dist ./node_modules",
+    "clean": "rm -rf ./dist",
+    "todos": "grep -R TODO src/*",
+    "lint-md": "markdownlint",
+    "lint-md-all": "markdownlint *.md docs/",
+    "lint-prettier": "prettier --check",
+    "lint-prettier-all": "prettier --check .",
+    "lint-ts": "tslint -c tslint.json",
+    "lint-ts-all": "tslint -c tslint.json --project ."
   }
 }
