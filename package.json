@@ -1,6 +1,6 @@
 {
   "name": "graphwalker-renderer",
-  "version": "00.00.01",
+  "version": "0.0.1",
   "description": "Rendering package for subgraphs in graphwalker",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
