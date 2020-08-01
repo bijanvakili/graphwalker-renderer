@@ -21,12 +21,12 @@
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^4.0.0",
-    "typescript": "^3.5.3"
+    "tslint-react": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "d3-selection": "^1.4.0"
+    "d3-selection": "^1.4.0",
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "build": "tsc --project .",
@@ -39,6 +39,7 @@
     "lint-prettier": "prettier --check",
     "lint-prettier-all": "prettier --check .",
     "lint-ts": "tslint -c tslint.json",
-    "lint-ts-all": "tslint -c tslint.json --project ."
+    "lint-ts-all": "tslint -c tslint.json --project .",
+    "postinstall": "tsc"
   }
 }
