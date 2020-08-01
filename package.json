@@ -40,6 +40,6 @@
     "lint-prettier-all": "prettier --check .",
     "lint-ts": "tslint -c tslint.json",
     "lint-ts-all": "tslint -c tslint.json --project .",
-    "postinstall": "yarn run build"
+    "postinstall": "yarn run tsc"
   }
 }
