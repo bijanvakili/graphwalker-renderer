@@ -100,6 +100,7 @@ interface GraphLayout {
   edges: EdgeLayout[];
 }
 
+// TODO export this
 interface ImageMetadataMap {
   [key: string]: VertexImage;
 }
@@ -147,13 +148,15 @@ class SubgraphRenderer implements Renderer {
     this.graph = props.graph;
     this.settings = props.settings;
 
-    this.images = Object.values(ImageIdentifier).reduce(
-      (accum, id) => ({
+    this.images = Object.keys(ImageIdentifier).reduce((accum, k) => {
+      // TODO fix this cast to any (TypeScript enums suck at iterating)
+      const v: string = (ImageIdentifier as any)[k];
+      return {
         ...accum,
-        [id]: this.settings.getVertexImageById(id),
-      }),
-      {}
-    );
+        [v]: this.settings.getVertexImageById(v),
+      };
+      // tslint:disable-next-line:align
+    }, {});
 
     this.vertexGroupHeight =
       this.images.vertexIcon.height +
@@ -180,7 +183,7 @@ class SubgraphRenderer implements Renderer {
     // add image templates
     svgSelection
       .selectAll("symbol")
-      .data(Object.values(images))
+      .data(Object.keys(images).map((k) => images[k]))
       .enter()
       .append("symbol")
       .attr("id", (img) => `${svgTemplatePrefix}${img.id}`)

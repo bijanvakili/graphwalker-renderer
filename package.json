@@ -21,16 +21,16 @@
     "tslint-react": "^4.0.0"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
-    "d3-selection": "^1.4.0",
-    "typescript": "^3.5.3",
     "@types/classnames": "^2.2.9",
     "@types/d3-selection": "^1.4.1",
-    "@types/node": "^12.6.9"
+    "@types/node": "^12.6.9",
+    "classnames": "^2.2.6",
+    "d3-selection": "^1.4.0",
+    "typescript": "^3.5.3"
   },
   "scripts": {
-    "build": "tsc --project .",
-    "build:watch": "tsc --project . --watch",
+    "build": "tsc --project ./tsconfig.json",
+    "build:watch": "tsc --project ./tsconfig.json --watch",
     "clean:all": "rm -rf ./dist ./node_modules",
     "clean": "rm -rf ./dist",
     "todos": "grep -R TODO src/*",
